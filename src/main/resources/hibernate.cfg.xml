@@ -11,7 +11,10 @@
     <property name="hibernate.show_sql">true</property>
     <!--явно указали диалект-->
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-    <mapping class="config.entity.UserData"/>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <mapping class="app.entity.UserData"/>
+    <mapping class="app.entity.Dog"/>
+    <mapping class="app.POJO.Adress"/>
 
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->

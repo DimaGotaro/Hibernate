@@ -1,6 +1,9 @@
-package config;
+package app;
 
-import config.entity.UserData;
+import app.entity.Animal;
+import app.entity.Dog;
+import app.entity.UserData;
+import jakarta.persistence.EntityManager;
 import org.hibernate.Session;
 
 import java.util.List;
@@ -14,7 +17,7 @@ public class Main {
         session.getTransaction().begin();
 
         UserData userData = new UserData();
-        userData.setUsername("Jonson2");
+        userData.setUsername("Jonson1");
         userData.setEmail("jon2@tut,by");
         userData.setPassword("ksjfbg2");
 
@@ -33,8 +36,9 @@ class Update {
         // открываем транзакцию
         session.getTransaction().begin();
 
-        UserData userData2 = session.get(UserData.class, 5);
+        UserData userData2 = session.get(UserData.class, 2);
         userData2.setPassword("vagabund2");
+        session.merge(userData2);
 
 
         session.getTransaction().commit(); // сохранить изменения
@@ -53,7 +57,6 @@ class Delete {
         UserData userData2 = session.get(UserData.class, 4);
         session.remove(userData2);
 
-
         session.getTransaction().commit(); // сохранить изменения
 
         session.close(); // закрыть транзакцию
@@ -69,10 +72,27 @@ class All {
 
         List<UserData> userDatalist = session.createQuery("select p from UserData p", UserData.class)
                 .getResultList();
-        for (UserData f:
-             userDatalist) {
+        for (UserData f :
+                userDatalist) {
             System.out.println(f.getUsername());
         }
+
+        session.getTransaction().commit(); // сохранить изменения
+
+        session.close(); // закрыть транзакцию
+        HibernateUtil.shutdown();
+    }
+}
+class All_dog {
+    public static void main(String[] args) {
+        Session session = HibernateUtil.initSessionFactory().openSession();
+
+        // открываем транзакцию
+        session.getTransaction().begin();
+
+        Dog dog = new Dog();
+        dog.setAnimal(new Animal("Lary", "Minsk"));
+        session.persist(dog);
 
         session.getTransaction().commit(); // сохранить изменения
 

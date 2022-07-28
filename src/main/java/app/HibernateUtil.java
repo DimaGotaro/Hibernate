@@ -1,4 +1,4 @@
-package config;
+package app;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -12,9 +12,12 @@ public class HibernateUtil {
     private static final SessionFactory sessionFactory = initSessionFactory();
 
     // статическая иниц, статич переменная вызывает статич метод, до начала работы main
-    private static SessionFactory initSessionFactory() {
+    public static SessionFactory initSessionFactory() {
         try {
-            return new Configuration().configure(new File("src\\main\\resources\\hibernate.cfg.xml")).buildSessionFactory();
+            return new Configuration()
+//                    .addAnnotatedClass(f) // создание таблиц в базу через аннотации, а не .xml
+                    .configure(new File("src\\main\\resources\\hibernate.cfg.xml"))
+                    .buildSessionFactory();
         }
         catch (Throwable throwable) {
             throwable.printStackTrace();
@@ -34,6 +37,6 @@ public class HibernateUtil {
 
     // закрываем сессию
     public static void shutdown() {
-        getSessionFactory().close();
+        initSessionFactory().close();
     }
 }
