@@ -3,6 +3,8 @@ package app.POJO_3;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @NoArgsConstructor
 @Getter
@@ -13,9 +15,8 @@ public class Client  extends Human {
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private int id;
     @Column
-    private int balance;
-
-    public Client(String name, int age, int balance) {
+    private BigDecimal balance;
+    public Client(String name, int age, BigDecimal balance) {
         super(name, age);
         this.balance = balance;
     }

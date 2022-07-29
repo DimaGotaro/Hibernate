@@ -1,5 +1,6 @@
-package app;
+package app.App_All;
 
+import app.HibernateUtil;
 import app.POJO.Adress;
 import app.POJO.Student;
 import org.hibernate.Session;

@@ -27,9 +27,8 @@ public class HibernateUtil {
 
     // вызываем сессию
     public static SessionFactory getSessionFactory() {
-
         if (sessionFactory == null) { // если вдруг пустой
-            initSessionFactory();
+            return initSessionFactory();
         }
 
         return sessionFactory;

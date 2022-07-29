@@ -14,7 +14,10 @@ public class Usr extends Human {
 //    private int id;
     @Column
     private String firstname;
-
+    @OneToOne
+    private Client client;
+    @OneToOne
+    private Human human;
     public Usr(String name, int age, String firstname) {
         super(name, age);
         this.firstname = firstname;
