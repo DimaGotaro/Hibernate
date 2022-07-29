@@ -20,8 +20,8 @@ public class App {
         Student student =new Student();
         student.setName("Nona");
         student.setAge(55);
-        student.getAdress().add(adress);
-        student.getAdress().add(adress2);
+//        student.getAdress().add(adress);
+//        student.getAdress().add(adress2);
 
         session2.persist(adress);
         session2.persist(adress2);

@@ -16,6 +16,6 @@ public class Adress2 {
     private int id;
     @Column
     private String strit;
-    @ManyToMany
-    private List<Student2> student2 = new ArrayList<Student2>();
+//    @ManyToMany
+//    private List<Student2> student2 = new ArrayList<Student2>();
 }

@@ -45,7 +45,7 @@ public class App_2 {
 //        student.getAdress().add(adress);
 //        student.getAdress().add(adress2);
 
-        student.setAdress(new ArrayList<>(Arrays.asList(adress, adress2)));
+//        student.setAdress(new ArrayList<>(Arrays.asList(adress, adress2)));
         adress.setStudent(student);
         adress2.setStudent(student);
 
@@ -114,9 +114,9 @@ class App_3 {
 
         student.setAdress2(new ArrayList<>(Arrays.asList(adress, adres2)));
         student2.setAdress2(new ArrayList<>(Arrays.asList(adres3, adres2)));
-        adress.setStudent2(new ArrayList<>(List.of(student)));
-        adres2.setStudent2(new ArrayList<>(Arrays.asList(student, student2)));
-        adres3.setStudent2(new ArrayList<>(List.of(student2)));
+//        adress.setStudent2(new ArrayList<>(List.of(student)));
+//        adres2.setStudent2(new ArrayList<>(Arrays.asList(student, student2)));
+//        adres3.setStudent2(new ArrayList<>(List.of(student2)));
 
         session.persist(adress);
         session.persist(adres2);

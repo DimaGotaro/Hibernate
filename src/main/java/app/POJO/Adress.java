@@ -14,5 +14,7 @@ public class Adress {
     @Column
     private String strit;
     @ManyToOne
+    @JoinTable(name = "CATALOG", joinColumns = @JoinColumn(name = "ID_ADRESS"),
+            inverseJoinColumns = @JoinColumn(name = "ID_STUDENT"))
     private Student student;
 }

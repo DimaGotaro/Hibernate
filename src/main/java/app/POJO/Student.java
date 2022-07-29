@@ -18,6 +18,6 @@ public class Student {
     private String name;
     @Column
     private int age;
-    @OneToMany(mappedBy = "student")
-    private List<Adress> adress = new ArrayList<Adress>();
+//    @OneToMany
+//    private List<Adress> adress = new ArrayList<Adress>();
 }
