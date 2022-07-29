@@ -1,4 +1,4 @@
-package app;
+package app.Config;
 
 import app.POJO_2.Location;
 import app.POJO_2.Persona;
@@ -8,8 +8,6 @@ import app.POJO_3.Usr;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-
-import java.util.List;
 
 public class HibConf {
     private static final SessionFactory sessionFactory = initSessionFactory();

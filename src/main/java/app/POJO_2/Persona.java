@@ -2,10 +2,13 @@ package app.POJO_2;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 public class Persona {
     @Id
@@ -17,4 +20,14 @@ public class Persona {
     private int age;
     @OneToOne
     private Location location;
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", location=" + location.getLoc() +
+                '}';
+    }
 }

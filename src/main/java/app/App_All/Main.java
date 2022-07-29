@@ -1,9 +1,9 @@
-package app;
+package app.App_All;
 
+import app.Config.HibernateUtil;
 import app.entity.Animal;
 import app.entity.Dog;
 import app.entity.UserData;
-import jakarta.persistence.EntityManager;
 import org.hibernate.Session;
 
 import java.util.List;

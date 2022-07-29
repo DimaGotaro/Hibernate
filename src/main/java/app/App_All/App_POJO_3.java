@@ -1,6 +1,6 @@
 package app.App_All;
 
-import app.HibConf;
+import app.Config.HibConf;
 import app.POJO_3.Client;
 import app.POJO_3.Human;
 import app.POJO_3.Usr;
@@ -14,9 +14,6 @@ public class App_POJO_3 {
         Human human = new Human("Mark", 47);
         Usr usr = new Usr("Tom", 39, "bakkardi");
         Client client = new Client("Bob", 26, BigDecimal.valueOf(2000));
-
-        usr.setHuman(human);
-        usr.setClient(client);
 
         Session session = HibConf.inner().openSession();
         try {

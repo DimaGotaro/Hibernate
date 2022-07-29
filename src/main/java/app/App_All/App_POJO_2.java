@@ -1,6 +1,6 @@
 package app.App_All;
 
-import app.HibConf;
+import app.Config.HibConf;
 import app.POJO_2.Location;
 import app.POJO_2.Persona;
 import org.hibernate.Session;

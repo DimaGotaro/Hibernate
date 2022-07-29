@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS) // стратегия наследования
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // стратегия наследования
 // SINGLE_TABLE - создаёт одну таблицу с родительским классом и наследниками
 // TABLE_PER_CLASS - создаёт отдельные таблицы для всех классов соединяя поля родительских классов и наследников,
 // при создании таблицы класса наследника
@@ -35,5 +35,13 @@ public class Human extends Model {
     public Human(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
