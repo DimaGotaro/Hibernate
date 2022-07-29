@@ -15,6 +15,7 @@
     <mapping class="app.entity.UserData"/>
     <mapping class="app.entity.Dog"/>
     <mapping class="app.POJO.Adress"/>
+    <mapping class="app.POJO.Student"/>
 
     <!-- DB schema will be updated if needed -->
     <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->

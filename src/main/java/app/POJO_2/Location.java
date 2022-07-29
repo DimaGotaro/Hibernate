@@ -1,4 +1,4 @@
-package app.POJO;
+package app.POJO_2;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -7,12 +7,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class Adress {
+public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column
-    private String strit;
-    @ManyToOne
-    private Student student;
+    private String loc;
+    @OneToOne
+    private Persona persona;
 }
