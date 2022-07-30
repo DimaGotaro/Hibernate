@@ -16,15 +16,12 @@ import java.util.List;
 
 public class App_2 {
     public static void main(String[] args) {
-
         Configuration configuration = new Configuration()
                 .configure()
                 .addAnnotatedClass(Student.class)
                 .addAnnotatedClass(Adress.class);
-
         StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties());
-
         SessionFactory sessionFactory = configuration.buildSessionFactory(registryBuilder.build());
 
         // Сессия
@@ -45,9 +42,9 @@ public class App_2 {
 //        student.getAdress().add(adress);
 //        student.getAdress().add(adress2);
 
-//        student.setAdress(new ArrayList<>(Arrays.asList(adress, adress2)));
-        adress.setStudent(student);
-        adress2.setStudent(student);
+        student.setAdress(new ArrayList<>(Arrays.asList(adress, adress2)));
+//        adress.setStudent(student);
+//        adress2.setStudent(student);
 
         session.persist(student);
         session.persist(adress2);

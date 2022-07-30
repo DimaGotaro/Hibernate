@@ -1,5 +1,9 @@
 package app.Config;
 
+import app.POJO.Adress;
+import app.POJO.Adress2;
+import app.POJO.Student;
+import app.POJO.Student2;
 import app.POJO_2.Location;
 import app.POJO_2.Persona;
 import app.POJO_3.Client;
@@ -20,7 +24,11 @@ public class HibConf {
                     .addAnnotatedClass(Usr.class)
                     .addAnnotatedClass(Client.class)
                     .addAnnotatedClass(Location.class)
-                    .addAnnotatedClass(Persona.class);
+                    .addAnnotatedClass(Persona.class)
+                    .addAnnotatedClass(Student.class)
+                    .addAnnotatedClass(Student2.class)
+                    .addAnnotatedClass(Adress.class)
+                    .addAnnotatedClass(Adress2.class);
             StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties());
             return configuration.buildSessionFactory(registryBuilder.build());

@@ -18,6 +18,17 @@ public class Student {
     private String name;
     @Column
     private int age;
-//    @OneToMany
-//    private List<Adress> adress = new ArrayList<Adress>();
+    @OneToMany
+    @JoinTable(name = "CATALOG_2", joinColumns = @JoinColumn(name = "ID_STUDENT"),
+            inverseJoinColumns = @JoinColumn(name = "ID_ADRESS"))
+    private List<Adress> adress = new ArrayList<Adress>();
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }

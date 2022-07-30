@@ -18,4 +18,13 @@ public class Location {
     private String loc;
     @OneToOne
     private Persona persona;
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "id=" + id +
+                ", loc='" + loc + '\'' +
+                ", persona=" + persona.getId() +
+                '}';
+    }
 }

@@ -13,8 +13,16 @@ public class Adress {
     private int id;
     @Column
     private String strit;
-    @ManyToOne
-    @JoinTable(name = "CATALOG", joinColumns = @JoinColumn(name = "ID_ADRESS"),
-            inverseJoinColumns = @JoinColumn(name = "ID_STUDENT"))
-    private Student student;
+//    @ManyToOne
+//    @JoinTable(name = "CATALOG", joinColumns = @JoinColumn(name = "ID_ADRESS"),
+//            inverseJoinColumns = @JoinColumn(name = "ID_STUDENT"))
+//    private Student student;
+
+    @Override
+    public String toString() {
+        return "Adress{" +
+                "id=" + id +
+                ", strit='" + strit + '\'' +
+                '}';
+    }
 }
